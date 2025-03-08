@@ -163,23 +163,54 @@ public class Main {
 
                     int i1 = 0;
                     do {
-                        System.out.println("===================\n       BANCO       \n===================\n[1] Consultar Saque\n[2] Depositar\n[3] Sacar\n[4] Transferir\n\n[0] Finalizar");
-
+                        System.out.println("===================\n       BANCO       \n===================\n[1] Consultar Saldo\n[2] Depositar\n[3] Sacar\n[4] Transferir\n\n[0] Finalizar");
                         int subOpcao03 = sc.nextInt();
                         sc.nextLine();
 
 
                         switch(subOpcao03){
                             case 1:
-                                System.out.println("===================\n       SALDO       \n===================\nSeu saldo é:\nR$ "+b.saldo+ "\n\n\n[1] Voltar");
-                        }
-                                i1 = sc.nextInt();
-                                sc.nextLine();
+                                System.out.println("===================\n       SALDO       \n===================\nSeu saldo é:\nR$ "+b.saldo);
                                 break;
+
+
+                            case 2:
+                                System.out.println("===================\n     DEPOSITAR     \n===================\nDigite o valor\nque deseja\ndepositar: ");
+                                b.deposito = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("CONFIRMADO!\n\nSeu novo saldo:\nR$"+b.novoDeposito(b.saldo, b.deposito));
+                                break;
+
+
+                            case 3:
+                                System.out.println("===================\n       SAQUE       \n===================\nDigite o valor\nque deseja\nsacar: ");
+                                b.saque = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("CONFIRMADO!\n\nSeu novo saldo:\nR$"+b.novoSaque(b.saldo, b.saque));
+                                break;
+
+
+                            case 4:
+                                System.out.println("teste");
+
+
+
+
+
+                        }
+                        if (subOpcao03 != 0) {
+                            System.out.println("\n\n\n[1] Voltar\n[0] Finalizar");
+                            i1 = sc.nextInt();
+                            sc.nextLine();
+                        } else {
+                            i1 = 0;
+                        }
 
 // apresenta necessididade de inserir 2x ok 0 para finalizar o do/while
 // igual os parametros do while abaixo
-                    }while (i1 != 1);
+                    }while (i1 != 0);
                         System.out.println("end.");
 
 
