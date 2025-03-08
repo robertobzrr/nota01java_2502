@@ -7,7 +7,7 @@ public class Main {
         Aluno a = new Aluno();
         Matematica mat = new Matematica();
         Produto p = new Produto();
-
+        Banco b = new Banco();
 
 
 
@@ -16,11 +16,11 @@ public class Main {
         do {
             System.out.println("========== Lista Nota 01 - Java ==========\n");
             System.out.println("\n-> Escolha o exercício que deseja avaliar:\n   [1] --- Exercício 01\n   [2] --- Exercício 02\n   [3] --- Exercício 03\n   [4] --- Exercício 04\n   [5] --- Exercício 05");
-
             int num = sc.nextInt();
             sc.nextLine();
-            switch (num) {
 
+
+            switch (num) {
                 case 1:
                     System.out.println("1) Defina uma classe Aluno que faça o cadastro do nome e das 3 notas e a operação do cálculo\n" +
                             "da média. Ao final, exiba (na classe principal) a média. Em seguida, informe se ele está\n" +
@@ -51,7 +51,7 @@ public class Main {
                         System.out.println("Você está na final, foque para passar!");
 
                     }else {
-                        System.out.println("Você foi reprovado, estude mais proximo ano!");
+                        System.out.println("Você foi reprovado, estude mais próximo ano!");
                     }
                     break;
 
@@ -64,6 +64,7 @@ public class Main {
 
                     System.out.println("\n -> Vamos acessar a calculadora! Escolha a operação que deseja usar.\n  - [1] Adição\n  - [2] Subtração\n  - [3] Divisão\n  - [4] Multiplicação");
                     int subOpcao01 = sc.nextInt();
+                    sc.nextLine();
 
                     switch (subOpcao01){
                         case 1:
@@ -121,7 +122,7 @@ public class Main {
 
 
                 case 3:
-                    System.out.println("3) Crie uma classe chamada \"Produto\" que representará um produto com os atributos nome,\n" +
+                    System.out.println("3) Crie uma classe chamada Produto que representará um produto com os atributos nome,\n" +
                             "preço e quantidade em estoque. Implemente métodos para adicionar estoque e vender\n" +
                             "unidades do produto. Na classe principal, crie um objeto Produto, realize operações de:" + "\n - [1] Adicionar estoque\n - [2] Vender produtos\n - [3] Exibir estoque");
                     int subOpcao02 = sc.nextInt();
@@ -157,7 +158,31 @@ public class Main {
 
 
                 case 4:
-                    System.out.println("tezte");
+                    System.out.println("4) Elabore um programa que simule um sistema bancário de um cliente. Inicialmente o saldo\n" +
+                            "está zerado, mas o cliente pode escolher qualquer uma das seguintes opções do menu:");
+
+                    int i1 = 0;
+                    do {
+                        System.out.println("===================\n       BANCO       \n===================\n[1] Consultar Saque\n[2] Depositar\n[3] Sacar\n[4] Transferir\n\n[0] Finalizar");
+
+                        int subOpcao03 = sc.nextInt();
+                        sc.nextLine();
+
+
+                        switch(subOpcao03){
+                            case 1:
+                                System.out.println("===================\n       SALDO       \n===================\nSeu saldo é:\nR$ "+b.saldo+ "\n\n\n[1] Voltar");
+                        }
+                                i1 = sc.nextInt();
+                                sc.nextLine();
+                                break;
+
+// apresenta necessididade de inserir 2x ok 0 para finalizar o do/while
+// igual os parametros do while abaixo
+                    }while (i1 != 1);
+                        System.out.println("end.");
+
+
 
 
 
@@ -166,6 +191,7 @@ public class Main {
 
             System.out.println("\n-> Para continuar, digite qualquer número.\n-> Para finalizar aperte [0].");
             i = sc.nextInt();
+            sc.nextLine();
 
         }while (i != 0);
 
