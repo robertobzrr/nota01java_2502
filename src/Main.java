@@ -161,6 +161,7 @@ public class Main {
                     System.out.println("4) Elabore um programa que simule um sistema bancário de um cliente. Inicialmente o saldo\n" +
                             "está zerado, mas o cliente pode escolher qualquer uma das seguintes opções do menu:");
 
+
                     int i1 = 0;
                     do {
                         System.out.println("===================\n       BANCO       \n===================\n[1] Consultar Saldo\n[2] Depositar\n[3] Sacar\n[4] Transferir\n\n[0] Finalizar");
@@ -208,8 +209,7 @@ public class Main {
                             i1 = 0;
                         }
 
-// apresenta necessididade de inserir 2x ok 0 para finalizar o do/while
-// igual os parametros do while abaixo
+
                     }while (i1 != 0);
                         System.out.println("end.");
 
