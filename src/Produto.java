@@ -1,6 +1,6 @@
 public class Produto {
 
-            String banana;
+            String estoque;
             double valor = 1.55;
             int quantidadeEstoque = 1000;
             int novoEstoque;

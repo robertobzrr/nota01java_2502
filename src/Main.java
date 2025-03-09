@@ -17,7 +17,7 @@ public class Main {
 
         do {
             System.out.println("========== Lista Nota 01 - Java ==========\n");
-            System.out.println("\n-> Escolha o exercício que deseja avaliar:\n   [1] --- Exercício 01\n   [2] --- Exercício 02\n   [3] --- Exercício 03\n   [4] --- Exercício 04\n   [5] --- Exercício 05");
+            System.out.println("\n-> Escolha o exercício que deseja avaliar:\n   [1] --- Exercício 01\n   [2] --- Exercício 02\n   [3] --- Exercício 03\n   [4] --- Exercício 04");
             int num = sc.nextInt();
             sc.nextLine();
 
@@ -136,7 +136,7 @@ public class Main {
                                 p.addEstoque = sc.nextInt();
                                 sc.nextLine();
 
-                                System.out.println("Estoque atualizado, a nova quantidade de banana é: "+p.calculo_addEstoque(p.quantidadeEstoque, p.addEstoque));
+                                System.out.println("Estoque atualizado, a nova quantidade de estoque é: "+p.calculo_addEstoque(p.quantidadeEstoque, p.addEstoque));
                                 break;
 
 
@@ -151,7 +151,7 @@ public class Main {
 
 
                             case 3:
-                                System.out.println("Estoque atual de banana é: "+p.quantidadeEstoque);
+                                System.out.println("Estoque atual é: "+p.quantidadeEstoque);
                                 break;
 
 
@@ -196,9 +196,17 @@ public class Main {
 
 
                             case 4:
-                                System.out.println("teste");
+                                System.out.println("===================\n     TRANSFERIR     \n===================\nDigite o valor\nque deseja\ntransferir: ");
+                                b.transfer = sc.nextDouble();
+                                sc.nextLine();
 
-
+                                if (b.saldo > 0 && b.saldo >= b.transfer) {
+                                    b.novaTransfer(b.saldo, b.transfer);
+                                    System.out.println("Transferência realizada com sucesso!\nSeu novo saldo: " + b.novoSaldo);
+                                } else {
+                                    System.out.println("Saldo insuficiente");
+                                }
+                                break;
 
 
 
@@ -217,10 +225,8 @@ public class Main {
 
 
 
-
-
-
             }
+
 
             System.out.println("\n-> Para continuar, digite qualquer número.\n-> Para finalizar aperte [0].");
             i = sc.nextInt();
@@ -230,6 +236,7 @@ public class Main {
 
         System.out.println("end.");
         sc.close();
+
 
     }
 
