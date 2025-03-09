@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +9,7 @@ public class Main {
         Matematica mat = new Matematica();
         Produto p = new Produto();
         Banco b = new Banco();
+
 
 
 
@@ -128,33 +130,33 @@ public class Main {
                     int subOpcao02 = sc.nextInt();
 
 
-                    switch (subOpcao02){
-                        case 1:
-                            System.out.println("  - Digite quantos produtos você quer adicionar ao estoque: ");
-                            p.addEstoque = sc.nextInt();
-                            sc.nextLine();
+                        switch (subOpcao02){
+                            case 1:
+                                System.out.println("  - Digite quantos produtos você quer adicionar ao estoque: ");
+                                p.addEstoque = sc.nextInt();
+                                sc.nextLine();
 
-                            System.out.println("Estoque atualizado, a nova quantidade de banana é: "+p.calculo_addEstoque(p.quantidadeEstoque, p.addEstoque));
-                            break;
-
-
-                        case 2:
-                            System.out.println("  - Digite quantos produtos você quer adicionar ao seu carrinho: ");
-                            p.itemCompra = sc.nextInt();
-                            sc.nextLine();
-
-                            System.out.println(" -> Valor total: "+p.venderProdutos(p.valor, p.itemCompra));
-                            System.out.println("Estoque atualizado, a nova quantidade de banana é: "+p.calculo_subEstoque(p.quantidadeEstoque, p.itemCompra));
-                            break;
+                                System.out.println("Estoque atualizado, a nova quantidade de banana é: "+p.calculo_addEstoque(p.quantidadeEstoque, p.addEstoque));
+                                break;
 
 
-                        case 3:
-                            System.out.println("Estoque atual de banana é: "+p.quantidadeEstoque);
-                            break;
+                            case 2:
+                                System.out.println("  - Digite quantos produtos você quer adicionar ao seu carrinho: ");
+                                p.itemCompra = sc.nextInt();
+                                sc.nextLine();
+
+                                System.out.println(" -> Valor total: "+p.venderProdutos(p.valor, p.itemCompra));
+                                System.out.println("Estoque atualizado, a nova quantidade de banana é: "+p.calculo_subEstoque(p.quantidadeEstoque, p.itemCompra));
+                                break;
 
 
-                    }
-                    break;
+                            case 3:
+                                System.out.println("Estoque atual de banana é: "+p.quantidadeEstoque);
+                                break;
+
+
+                        }
+                        break;
 
 
                 case 4:
@@ -230,4 +232,6 @@ public class Main {
         sc.close();
 
     }
+
+
 }
