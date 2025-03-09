@@ -200,13 +200,13 @@ public class Main {
                                 b.transfer = sc.nextDouble();
                                 sc.nextLine();
 
-                                if (b.saldo > 0 && b.saldo >= b.transfer) {
-                                    b.novaTransfer(b.saldo, b.transfer);
-                                    System.out.println("Transferência realizada com sucesso!\nSeu novo saldo: " + b.novoSaldo);
-                                } else {
-                                    System.out.println("Saldo insuficiente");
-                                }
-                                break;
+                                    if (b.saldo > 0 && b.saldo >= b.transfer) {
+                                        b.novaTransfer(b.saldo, b.transfer);
+                                        System.out.println("Transferência realizada com sucesso!\nSeu novo saldo: " + b.novoSaldo);
+                                    } else {
+                                        System.out.println("Saldo insuficiente");
+                                    }
+                                    break;
 
 
 
@@ -227,7 +227,6 @@ public class Main {
 
             }
 
-
             System.out.println("\n-> Para continuar, digite qualquer número.\n-> Para finalizar aperte [0].");
             i = sc.nextInt();
             sc.nextLine();
@@ -236,7 +235,6 @@ public class Main {
 
         System.out.println("end.");
         sc.close();
-
 
     }
 

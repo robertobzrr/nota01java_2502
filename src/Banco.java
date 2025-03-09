@@ -11,7 +11,6 @@ public class Banco {
             return novoSaldo = saldo + deposito;
         }
 
-
         public double novoSaque(double saldo, double saque){
             if (saldo > 0){
                 return novoSaldo = saldo - saque;
@@ -20,7 +19,6 @@ public class Banco {
                 return saldo;
             }
         }
-
 
         public double novaTransfer(double saldo, double transfer){
             return novoSaldo = saldo - transfer;
