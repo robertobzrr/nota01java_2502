@@ -1,6 +1,6 @@
 public class Banco {
 
-            double saldo = 1000;
+            double saldo = 0;
             double deposito;
             double novoSaldo;
             double saque;
@@ -8,7 +8,8 @@ public class Banco {
 
 
         public double novoDeposito(double saldo, double deposito){
-            return novoSaldo = saldo + deposito;
+            novoSaldo = saldo + deposito;
+            return novoSaldo;
         }
 
         public double novoSaque(double saldo, double saque){

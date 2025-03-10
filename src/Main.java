@@ -14,9 +14,8 @@ public class Main {
 
 
         int i = 0;
-
         do {
-            System.out.println("========== Lista Nota 01 - Java ==========\n");
+            System.out.println("\n\n========== Lista Nota 01 - Java ==========\n");
             System.out.println("\n-> Escolha o exercício que deseja avaliar:\n   [1] --- Exercício 01\n   [2] --- Exercício 02\n   [3] --- Exercício 03\n   [4] --- Exercício 04");
             int num = sc.nextInt();
             sc.nextLine();
@@ -44,18 +43,19 @@ public class Main {
                     a.nota3 = sc.nextDouble();
                     sc.nextLine();
 
-                    System.out.println("\n" +a.nome+ ", sua média é: "+a.calculoMedia(a.nota1, a.nota2, a.nota3));
+                    System.out.println("\n" + a.nome + ", sua média é: " + a.calculoMedia(a.nota1, a.nota2, a.nota3));
 
-                    if (a.media >= 7){
-                        System.out.println("Você está aprovado, parabens!");
 
-                    }else if(a.media >= 4){
-                        System.out.println("Você está na final, foque para passar!");
+                        if (a.media >= 7) {
+                            System.out.println("Você está aprovado, parabens!");
 
-                    }else {
-                        System.out.println("Você foi reprovado, estude mais próximo ano!");
-                    }
-                    break;
+                        } else if (a.media >= 4) {
+                            System.out.println("Você está na final, foque para passar!");
+
+                        } else {
+                            System.out.println("Você foi reprovado, estude mais próximo ano!");
+                        }
+                        break;
 
 
                 case 2:
@@ -64,99 +64,134 @@ public class Main {
                             "2, vai ver a subtração, 3 divisão e 4 multiplicação. Observação: Estas operações deverão\n" +
                             "ser realizadas em uma classe chamada Matemática.");
 
-                    System.out.println("\n -> Vamos acessar a calculadora! Escolha a operação que deseja usar.\n  - [1] Adição\n  - [2] Subtração\n  - [3] Divisão\n  - [4] Multiplicação");
-                    int subOpcao01 = sc.nextInt();
-                    sc.nextLine();
 
-                    switch (subOpcao01){
-                        case 1:
-                            System.out.println(" -> Vamos fazer uma adição:\n  - Digite o primeiro número: ");
-                            mat.n1 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Digite o segundo número: ");
-                            mat.n2 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Resultado da soma = "+mat.soma(mat.n1, mat.n2));
-                            break;
+                    int i2 = 0;
+                    do {
+                        System.out.println("\n -> Vamos acessar a calculadora! Escolha a operação que deseja usar.\n  - [1] Adição\n  - [2] Subtração\n  - [3] Divisão\n  - [4] Multiplicação\n\n  - [0] Finalizar");
+                        int subOpcao02 = sc.nextInt();
+                        sc.nextLine();
 
 
-                        case 2:
-                            System.out.println(" -> Vamos fazer uma subtração:\n  - Digite o primeiro número: ");
-                            mat.n1 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Digite o segundo número: ");
-                            mat.n2 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Resultado da subtração = "+mat.sub(mat.n1, mat.n2));
-                            break;
-
-
-                        case 3:
-                            System.out.println(" -> Vamos fazer uma divisão:\n  - Digite o primeiro número: ");
-                            mat.n1 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Digite o segundo número: ");
-                            mat.n2 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Resultado da divisão = "+mat.div(mat.n1, mat.n2));
-                            break;
-
-
-                        case 4:
-                            System.out.println(" -> Vamos fazer uma multiplicação:\n  - Digite o primeiro número: ");
-                            mat.n1 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Digite o segundo número: ");
-                            mat.n2 = sc.nextDouble();
-                            sc.nextLine();
-
-                            System.out.println("Resultado da multiplicação = "+mat.multi(mat.n1, mat.n2));
-                            break;
-                    }
-                    break;
-
-
-                case 3:
-                    System.out.println("3) Crie uma classe chamada Produto que representará um produto com os atributos nome,\n" +
-                            "preço e quantidade em estoque. Implemente métodos para adicionar estoque e vender\n" +
-                            "unidades do produto. Na classe principal, crie um objeto Produto, realize operações de:" + "\n - [1] Adicionar estoque\n - [2] Vender produtos\n - [3] Exibir estoque");
-                    int subOpcao02 = sc.nextInt();
-
-
-                        switch (subOpcao02){
+                        switch (subOpcao02) {
                             case 1:
-                                System.out.println("  - Digite quantos produtos você quer adicionar ao estoque: ");
-                                p.addEstoque = sc.nextInt();
+                                System.out.println(" -> Vamos fazer uma adição:\n  - Digite o primeiro número: ");
+                                mat.n1 = sc.nextDouble();
                                 sc.nextLine();
 
-                                System.out.println("Estoque atualizado, a nova quantidade de estoque é: "+p.calculo_addEstoque(p.quantidadeEstoque, p.addEstoque));
+                                System.out.println("Digite o segundo número: ");
+                                mat.n2 = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("Resultado da soma = " + mat.soma(mat.n1, mat.n2));
                                 break;
 
 
                             case 2:
-                                System.out.println("  - Digite quantos produtos você quer adicionar ao seu carrinho: ");
-                                p.itemCompra = sc.nextInt();
+                                System.out.println(" -> Vamos fazer uma subtração:\n  - Digite o primeiro número: ");
+                                mat.n1 = sc.nextDouble();
                                 sc.nextLine();
 
-                                System.out.println(" -> Valor total: "+p.venderProdutos(p.valor, p.itemCompra));
-                                System.out.println("Estoque atualizado, a nova quantidade de banana é: "+p.calculo_subEstoque(p.quantidadeEstoque, p.itemCompra));
+                                System.out.println("Digite o segundo número: ");
+                                mat.n2 = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("Resultado da subtração = " + mat.sub(mat.n1, mat.n2));
                                 break;
 
 
                             case 3:
-                                System.out.println("Estoque atual é: "+p.quantidadeEstoque);
+                                System.out.println(" -> Vamos fazer uma divisão:\n  - Digite o primeiro número: ");
+                                mat.n1 = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("Digite o segundo número: ");
+                                mat.n2 = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("Resultado da divisão = " + mat.div(mat.n1, mat.n2));
                                 break;
 
 
+                            case 4:
+                                System.out.println(" -> Vamos fazer uma multiplicação:\n  - Digite o primeiro número: ");
+                                mat.n1 = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("Digite o segundo número: ");
+                                mat.n2 = sc.nextDouble();
+                                sc.nextLine();
+
+                                System.out.println("Resultado da multiplicação = " + mat.multi(mat.n1, mat.n2));
+                                break;
                         }
-                        break;
+
+
+                        if (subOpcao02 != 0) {
+                            System.out.println("\n\n\n[1] Voltar\n[0] Finalizar");
+                            i2 = sc.nextInt();
+                            sc.nextLine();
+                        } else {
+                            i2 = 0;
+                        }
+
+
+                    }while (i2 != 0);
+                    System.out.println("end.");
+                    break;
+
+
+                case 3:
+
+                    System.out.println("3) Crie uma classe chamada Produto que representará um produto com os atributos nome,\n" +
+                            "preço e quantidade em estoque. Implemente métodos para adicionar estoque e vender\n" +
+                            "unidades do produto. Na classe principal, crie um objeto Produto, realize operações de:");
+
+
+                    int i3 = 0;
+                    do{
+                        System.out.println("\n[1] Adicionar estoque\n[2] Vender produtos\n[3] Exibir estoque\n\n[0] Finalizar");
+                        int subOpcao03 = sc.nextInt();
+                        sc.nextLine();
+
+
+                            switch (subOpcao03) {
+                                case 1:
+                                    System.out.println("  - Digite quantos produtos você quer adicionar ao estoque: ");
+                                    p.addEstoque = sc.nextInt();
+                                    sc.nextLine();
+
+                                    System.out.println("Estoque atualizado, a nova quantidade de estoque é: " + p.calculo_addEstoque(p.quantidadeEstoque, p.addEstoque));
+                                    break;
+
+
+                                case 2:
+                                    System.out.println("  - Digite quantos produtos você quer vender: ");
+                                    p.itemCompra = sc.nextInt();
+                                    sc.nextLine();
+
+                                    System.out.println(" -> Valor total: " + p.venderProdutos(p.valor, p.itemCompra));
+                                    System.out.println("Estoque atualizado: " + p.calculo_subEstoque(p.quantidadeEstoque, p.itemCompra));
+                                    break;
+
+
+                                case 3:
+                                    System.out.println("Estoque atual é: " + p.quantidadeEstoque);
+                                    break;
+
+
+                            }
+                            if (subOpcao03 != 0) {
+                                System.out.println("\n\n\n[1] Voltar\n[0] Finalizar");
+                                i3 = sc.nextInt();
+                                sc.nextLine();
+                            } else {
+                                i3 = 0;
+                            }
+
+
+                    }while (i3 != 0);
+                    System.out.println("end.");
+                    break;
 
 
                 case 4:
@@ -164,70 +199,69 @@ public class Main {
                             "está zerado, mas o cliente pode escolher qualquer uma das seguintes opções do menu:");
 
 
-                    int i1 = 0;
+                    int i4 = 0;
                     do {
                         System.out.println("===================\n       BANCO       \n===================\n[1] Consultar Saldo\n[2] Depositar\n[3] Sacar\n[4] Transferir\n\n[0] Finalizar");
-                        int subOpcao03 = sc.nextInt();
+                        int subOpcao04 = sc.nextInt();
                         sc.nextLine();
 
 
-                        switch(subOpcao03){
-                            case 1:
-                                System.out.println("===================\n       SALDO       \n===================\nSeu saldo é:\nR$ "+b.saldo);
-                                break;
-
-
-                            case 2:
-                                System.out.println("===================\n     DEPOSITAR     \n===================\nDigite o valor\nque deseja\ndepositar: ");
-                                b.deposito = sc.nextDouble();
-                                sc.nextLine();
-
-                                System.out.println("CONFIRMADO!\n\nSeu novo saldo:\nR$"+b.novoDeposito(b.saldo, b.deposito));
-                                break;
-
-
-                            case 3:
-                                System.out.println("===================\n       SAQUE       \n===================\nDigite o valor\nque deseja\nsacar: ");
-                                b.saque = sc.nextDouble();
-                                sc.nextLine();
-
-                                System.out.println("CONFIRMADO!\n\nSeu novo saldo:\nR$"+b.novoSaque(b.saldo, b.saque));
-                                break;
-
-
-                            case 4:
-                                System.out.println("===================\n     TRANSFERIR     \n===================\nDigite o valor\nque deseja\ntransferir: ");
-                                b.transfer = sc.nextDouble();
-                                sc.nextLine();
-
-                                    if (b.saldo > 0 && b.saldo >= b.transfer) {
-                                        b.novaTransfer(b.saldo, b.transfer);
-                                        System.out.println("Transferência realizada com sucesso!\nSeu novo saldo: " + b.novoSaldo);
-                                    } else {
-                                        System.out.println("Saldo insuficiente");
-                                    }
+                            switch(subOpcao04){
+                                case 1:
+                                    System.out.println("===================\n       SALDO       \n===================\nSeu saldo é:\nR$ "+b.novoSaldo);
                                     break;
 
 
+                                case 2:
+                                    System.out.println("===================\n     DEPOSITAR     \n===================\nDigite o valor\nque deseja\ndepositar: ");
+                                    b.deposito = sc.nextDouble();
+                                    sc.nextLine();
 
-                        }
-                        if (subOpcao03 != 0) {
-                            System.out.println("\n\n\n[1] Voltar\n[0] Finalizar");
-                            i1 = sc.nextInt();
-                            sc.nextLine();
-                        } else {
-                            i1 = 0;
-                        }
+                                    System.out.println("CONFIRMADO!\n\nSeu novo saldo:\nR$"+b.novoDeposito(b.saldo, b.deposito));
+                                    break;
 
 
-                    }while (i1 != 0);
+                                case 3:
+                                    System.out.println("===================\n       SAQUE       \n===================\nDigite o valor\nque deseja\nsacar: ");
+                                    b.saque = sc.nextDouble();
+                                    sc.nextLine();
+
+                                    System.out.println("CONFIRMADO!\n\nSeu novo saldo:\nR$"+b.novoSaque(b.saldo, b.saque));
+                                    break;
+
+
+                                case 4:
+                                    System.out.println("===================\n     TRANSFERIR     \n===================\nDigite o valor\nque deseja\ntransferir: ");
+                                    b.transfer = sc.nextDouble();
+                                    sc.nextLine();
+
+                                        if (b.saldo > 0 && b.saldo >= b.transfer) {
+                                            b.novaTransfer(b.saldo, b.transfer);
+                                            System.out.println("Transferência realizada com sucesso!\nSeu novo saldo: " + b.novoSaldo);
+                                        } else {
+                                            System.out.println("Saldo insuficiente");
+                                        }
+                                        break;
+
+
+                            }
+                            if (subOpcao04 != 0) {
+                                System.out.println("\n\n\n[1] Voltar\n[0] Finalizar");
+                                i4 = sc.nextInt();
+                                sc.nextLine();
+                            } else {
+                                i4 = 0;
+                            }
+
+
+                    }while (i4 != 0);
                         System.out.println("end.");
 
 
 
             }
 
-            System.out.println("\n-> Para continuar, digite qualquer número.\n-> Para finalizar aperte [0].");
+            System.out.println("\n-> [1] Voltar para menu de exercícios\n-> [0] Finalizar");
             i = sc.nextInt();
             sc.nextLine();
 
